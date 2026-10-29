@@ -2,14 +2,14 @@
 
 桥梁病害多标签语义分割研究项目。本地开发目录为 `D:\bridgeDisease`，计划在 AutoDL 上完成数据准备和训练。
 
-当前仓库包含研究方案、实验计划和项目目录骨架；模型与训练代码尚未实现。
+当前仓库包含研究方案、实验计划，以及可运行的数据清洗与划分脚本；模型与训练代码尚未实现。
 
 ## 文件放在哪里
 
 | 目录或文件 | 用途 | 提交到 GitHub |
 | --- | --- | --- |
 | `src/` | 后续模型、数据加载和训练代码 | 是 |
-| `scripts/` | 后续数据处理、训练和评估入口 | 是 |
+| `scripts/` | 数据清洗、划分及后续训练和评估入口 | 是 |
 | `configs/` | 可共享配置、路径示例 | 是，排除 `*.local.*` 和 `configs/local/` |
 | `docs/` | 已有论文方案、实验计划和同步说明 | 是 |
 | `data/` | 数据放置说明，可在本机存放临时数据 | 仅 README |
@@ -24,6 +24,15 @@
 - [模型架构与实验方案](docs/thesis/CLIP桥梁病害分割_架构与实验方案.md)
 - [30 天实验计划](docs/superpowers/plans/2026-10-29-30-day-experiments.md)
 - [GitHub 与 AutoDL 同步步骤](docs/SYNC.md)
+- [数据清洗、划分与训练/验证/测试集作用](docs/DATA_PREPARATION.md)
+
+## 数据清洗与划分
+
+`scripts/prepare_dataset.py` 读取原始 FiftyOne 标注，检查图片与分割区域，生成可复现的训练、内部验证、最终测试及推理清单，保留所有原始文件。依赖见 `requirements-data.txt`。
+
+采用已选实验协议：官方 train 内部约90/10划分；官方 validation 留作本地最终测试；无真值 testdev 单列为推理集。参数锁定后，使用内部 train+val 的 `final_train` 重训正式模型。
+
+默认输出 `data/prepared/` 并延续既有非空标注子集；966张最终测试子集的结果不能标为完整官方975张结果。运行命令、输出格式及两种空标注处理策略见[数据准备说明](docs/DATA_PREPARATION.md)。
 
 ## 同步方式
 

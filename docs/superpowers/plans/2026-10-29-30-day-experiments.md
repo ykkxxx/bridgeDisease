@@ -128,6 +128,8 @@ B4的原生CLIP全冻结、共享图像特征和逐提示解码规则见完整�
 
 **Files / deliverables:** 计划生成`manifests/train_inner.jsonl`、`tune_inner.jsonl`、`final_train.jsonl`、`final_eval.jsonl`，以及标签顺序/图片尺寸/重复候选/空标注处理记录。当前这些清单尚未创建。
 
+2026-10-29进度补充：已新增 `scripts/prepare_dataset.py`，清单默认输出在 `data/prepared/manifests/`，包含上述同名清单。采用用户确认的内部约90/10协议，默认延续非空标注子集，因此最终评估为966张而非完整975张；完整975张口径仍需核验并保留显式空标注。具体以[数据准备说明](../../DATA_PREPARATION.md)和本次生成的摘要为准。本节其余训练、mask与指标任务仍需后续完成。
+
 **Interfaces:** 每行至少包含image_id、原始filepath、split、annotation_available、宽高；类别顺序固定为完整设计的19类。后续所有模型消费相同清单。
 
 - [ ] 对空标注、重叠区域、坐标边界、padding和可疑重复建立小型核验样例；分别验证null不转负样本、异类不覆盖、padding不计分。
