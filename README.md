@@ -33,20 +33,19 @@
 
 `configs/paths.example.json` 展示两端建议使用的路径。需要本机专用配置时，复制为 `configs/paths.local.json` 后修改；该文件已被忽略。示例目前只是路径约定，尚无训练程序读取它。
 
-## 首次发布到 GitHub
+## GitHub 仓库
 
-本地仓库使用 `main` 分支。首次发布前，在 GitHub 建立一个名为 `bridgeDisease` 的空仓库，不要勾选创建 README、`.gitignore` 或 License。然后在本地 PowerShell 中执行：
+仓库地址：[ykkxxx/bridgeDisease](https://github.com/ykkxxx/bridgeDisease)。本地使用 `main` 分支，`origin` 已配置为此仓库。
+
+检查远程地址并推送：
 
 ```powershell
 Set-Location -LiteralPath 'D:\bridgeDisease'
-# 替换成你刚创建的真实仓库地址。
-$repoUrl = 'https://github.com/YOUR_GITHUB_USERNAME/bridgeDisease.git'
-git remote add origin $repoUrl
 git remote -v
 git push -u origin main
 ```
 
-推送需要 GitHub 的有效登录凭据；Git 提交作者姓名不代表已经登录 GitHub。不要把 Token、密码或私钥写进仓库、远程 URL 或共享配置。若仓库尚未准备公开，可以先创建为私有仓库。
+推送需要 GitHub 的有效登录凭据；Git 提交作者姓名不代表已经登录 GitHub。不要把 Token、密码或私钥写进仓库、远程 URL 或共享配置。
 
 以上步骤依据 [GitHub 官方文档](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)。
 

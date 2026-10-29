@@ -12,23 +12,21 @@
 
 AutoDL 目标目录是本项目建议值，应结合实例实际磁盘空间确认。大文件优先放数据盘；重要产物另行备份。平台目录说明见 [AutoDL 文件系统文档](https://www.autodl.com/docs/env)。
 
-当前仅完成本地仓库初始化，未连接 AutoDL，也未上传数据。下文的用户名、仓库 URL、主机和端口占位符必须替换。
+GitHub 仓库为 [ykkxxx/bridgeDisease](https://github.com/ykkxxx/bridgeDisease)，本地 `origin` 已配置为该地址。尚未连接 AutoDL，也未上传数据。下文的 AutoDL 主机和端口占位符必须替换。
 
 ## 2. 首次把代码推送到 GitHub
 
-在 GitHub 新建空仓库，复制其 HTTPS 或 SSH 地址。不要为这个远程空仓库预先创建 README、License 或 `.gitignore`。
+目标仓库为 `https://github.com/ykkxxx/bridgeDisease.git`。当前本地仓库已经配置 `origin`，可直接检查并推送：
 
 在本地 PowerShell 中运行：
 
 ```powershell
 Set-Location -LiteralPath 'D:\bridgeDisease'
-$repoUrl = 'https://github.com/YOUR_GITHUB_USERNAME/bridgeDisease.git'
-git remote add origin $repoUrl
 git remote -v
 git push -u origin main
 ```
 
-若已经配置过 `origin`，先用 `git remote -v` 检查。确需改地址时使用 `git remote set-url origin $repoUrl`。
+若要给另一份尚未配置远程的本地仓库添加同一地址，执行 `git remote add origin https://github.com/ykkxxx/bridgeDisease.git`。已有 `origin` 时先检查，确需改地址再使用 `git remote set-url origin https://github.com/ykkxxx/bridgeDisease.git`。
 
 GitHub 认证依据所选 HTTPS 或 SSH 方式配置。私有仓库在 AutoDL 上拉取也需要相应权限，不要在 URL 中嵌入 Token。参考 [GitHub 官方发布说明](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)。
 
@@ -38,7 +36,7 @@ GitHub 认证依据所选 HTTPS 或 SSH 方式配置。私有仓库在 AutoDL �
 
 ```bash
 mkdir -p /root/autodl-tmp/datasets
-git clone https://github.com/YOUR_GITHUB_USERNAME/bridgeDisease.git /root/autodl-tmp/bridgeDisease
+git clone https://github.com/ykkxxx/bridgeDisease.git /root/autodl-tmp/bridgeDisease
 cd /root/autodl-tmp/bridgeDisease
 git status
 git log -1 --oneline
