@@ -1,0 +1,35 @@
+{
+  "status": "draft_not_domain_expert_validated_not_used_for_training",
+  "version": "2026-10-28",
+  "language": "en",
+  "descriptions_per_class": 3,
+  "review_rules": [
+    "These are proposed appearance prompts, not new image annotations or verified diagnostic descriptions.",
+    "Review against class definitions and training images only before locking; do not optimize on the final evaluation set.",
+    "Hollowareas especially needs review of visible inspection markings and dataset label meaning. RGB images do not establish internal delamination.",
+    "WConccor retains the official final object-group channel despite its damage-like name.",
+    "Check tokenizer lengths with the selected CLIP tokenizer before computing the 57 cached text embeddings.",
+    "For the class-name baseline, repeat class_name_prompt three times; for static averaging use equal weights over description scores."
+  ],
+  "classes": [
+    {"channel":0,"label":"Crack","group":"damage","class_name_prompt":"a photo of a crack on a concrete surface","descriptions":["a photo of a crack on a concrete surface","a thin irregular fracture line in concrete","a narrow branching crack on a concrete surface"]},
+    {"channel":1,"label":"ACrack","group":"damage","class_name_prompt":"a photo of alligator cracking on concrete","descriptions":["a photo of alligator cracking on concrete","a network of interconnected cracks on a concrete surface","multiple cracks forming small polygonal patterns in concrete"]},
+    {"channel":2,"label":"Wetspot","group":"damage","class_name_prompt":"a photo of a wet spot on concrete","descriptions":["a photo of a wet spot on concrete","an irregular dark damp-looking patch on a concrete surface","dark moisture stains spreading over a concrete surface"]},
+    {"channel":3,"label":"Efflorescence","group":"damage","class_name_prompt":"a photo of efflorescence on concrete","descriptions":["a photo of efflorescence on concrete","white powdery deposits on a concrete surface","whitish mineral streaks and patches on concrete"]},
+    {"channel":4,"label":"Rust","group":"damage","class_name_prompt":"a photo of rust in a bridge inspection","descriptions":["a photo of rust in a bridge inspection","reddish brown corrosion staining on a bridge surface","orange brown rust patches on metal or surrounding concrete"]},
+    {"channel":5,"label":"Rockpocket","group":"damage","class_name_prompt":"a photo of honeycombing in concrete","descriptions":["a photo of honeycombing in concrete","a rough concrete area with coarse aggregate and small gaps","exposed aggregate with irregular voids between stones in concrete"]},
+    {"channel":6,"label":"Hollowareas","group":"damage","class_name_prompt":"a concrete surface region marked as a hollow area","requires_special_review":true,"descriptions":["a concrete surface region marked as a hollow area","inspection markings outlining suspected concrete delamination","a marked concrete surface patch indicating a hollow area"]},
+    {"channel":7,"label":"Cavity","group":"damage","class_name_prompt":"a photo of a cavity in concrete","descriptions":["a photo of a cavity in concrete","an irregular hole in a concrete surface","a localized recessed void with a visible opening in concrete"]},
+    {"channel":8,"label":"Spalling","group":"damage","class_name_prompt":"a photo of concrete spalling","descriptions":["a photo of concrete spalling","a broken concrete surface with missing cover material","a rough damaged patch where concrete has flaked or broken away"]},
+    {"channel":9,"label":"Graffiti","group":"damage","class_name_prompt":"a photo of graffiti on a bridge surface","descriptions":["a photo of graffiti on a bridge surface","painted letters or drawings on a concrete surface","colored spray paint markings covering a bridge surface"]},
+    {"channel":10,"label":"Weathering","group":"damage","class_name_prompt":"a photo of a weathered concrete surface","descriptions":["a photo of a weathered concrete surface","a worn concrete surface with rough uneven texture","a visibly deteriorated outer surface of concrete"]},
+    {"channel":11,"label":"Restformwork","group":"damage","class_name_prompt":"a photo of residual formwork on concrete","descriptions":["a photo of residual formwork on concrete","pieces of formwork material remaining on a concrete surface","remnants of construction formwork attached to concrete"]},
+    {"channel":12,"label":"ExposedRebars","group":"damage","class_name_prompt":"a photo of exposed reinforcing bars in concrete","descriptions":["a photo of exposed reinforcing bars in concrete","visible steel reinforcement where concrete cover is missing","uncovered metal reinforcing bars on a damaged concrete surface"]},
+    {"channel":13,"label":"Bearing","group":"object","class_name_prompt":"a photo of a bridge bearing","descriptions":["a photo of a bridge bearing","a support bearing between a bridge deck and its support","a structural bearing assembly beneath a bridge"]},
+    {"channel":14,"label":"EJoint","group":"object","class_name_prompt":"a photo of a bridge expansion joint","descriptions":["a photo of a bridge expansion joint","a visible expansion joint between bridge sections","a joint assembly allowing movement between parts of a bridge"]},
+    {"channel":15,"label":"Drainage","group":"object","class_name_prompt":"a photo of bridge drainage equipment","descriptions":["a photo of bridge drainage equipment","a drainage pipe or outlet on a bridge","a water drainage fitting attached to a bridge structure"]},
+    {"channel":16,"label":"PEquipment","group":"object","class_name_prompt":"a photo of protective equipment on a bridge","descriptions":["a photo of protective equipment on a bridge","protective structural equipment attached to a bridge","a visible protection assembly in a bridge inspection image"]},
+    {"channel":17,"label":"JTape","group":"object","class_name_prompt":"a photo of joint tape in a concrete structure","descriptions":["a photo of joint tape in a concrete structure","a sealing strip along a joint in concrete","visible joint sealing tape on a bridge surface"]},
+    {"channel":18,"label":"WConccor","group":"object_official_grouping","class_name_prompt":"a photo of washout or concrete corrosion","requires_special_review":true,"descriptions":["a photo of washout or concrete corrosion","a visibly eroded concrete surface with washed out material","a worn concrete area showing material loss and surface erosion"]}
+  ]
+}

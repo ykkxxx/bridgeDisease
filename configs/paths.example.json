@@ -1,0 +1,10 @@
+{
+  "local": {
+    "dataset_root": "D:/dataset/dacl10k",
+    "output_root": "D:/bridgeDisease/outputs"
+  },
+  "autodl": {
+    "dataset_root": "/root/autodl-tmp/datasets/dacl10k",
+    "output_root": "/root/autodl-tmp/bridgeDisease/outputs"
+  }
+}
