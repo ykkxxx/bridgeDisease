@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bridge-disease-segmentation"
+version = "0.1.0"
+description = "Multilabel bridge-disease segmentation experiments"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "--basetemp=outputs/pytest-tmp"
+testpaths = ["tests"]

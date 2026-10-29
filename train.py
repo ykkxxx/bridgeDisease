@@ -1,0 +1,8 @@
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+from bridge_seg.runner import train_main
+
+if __name__ == "__main__":
+    raise SystemExit(train_main())

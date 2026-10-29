@@ -2,7 +2,7 @@
 
 桥梁病害多标签语义分割研究项目。本地开发目录为 `D:\bridgeDisease`，计划在 AutoDL 上完成数据准备和训练。
 
-当前仓库包含研究方案、实验计划，以及可运行的数据清洗与划分脚本；模型与训练代码尚未实现。
+当前仓库包含研究方案、数据清洗与划分、基线和BridgeTextSeg模型、训练/评估/推理入口。默认40轮；完整GPU训练和论文指标仍待AutoDL实测。
 
 ## 文件放在哪里
 
@@ -25,6 +25,20 @@
 - [30 天实验计划](docs/superpowers/plans/2026-10-29-30-day-experiments.md)
 - [GitHub 与 AutoDL 同步步骤](docs/SYNC.md)
 - [数据清洗、划分与训练/验证/测试集作用](docs/DATA_PREPARATION.md)
+- [AutoDL训练、评估与推理](docs/TRAINING.md)
+- [清洗数据7z打包与解压](docs/PACKAGE.md)
+
+## 云端快速启动
+
+将 `outputs/dacl10k_clean_autodl.7z` 上传并解压到 `/root/autodl-tmp/` 后，在代码仓库执行：
+
+```bash
+python -m pip install -r requirements-train.txt
+python -m pip install -e . --no-deps
+python train.py --config configs/experiments/P.json --stage dev --device cuda
+```
+
+默认路径已对应压缩包目录。支持B1–B4、P及A0/A1/A2/A3/A4/A1L；本月六模型批量入口为 `scripts/run_experiments.py`。完整命令见[训练说明](docs/TRAINING.md)。
 
 ## 数据清洗与划分
 

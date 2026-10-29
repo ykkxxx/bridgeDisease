@@ -1,0 +1,7 @@
+# Install a matching torch/torchvision pair separately; AutoDL image: 2.1.0/0.16.0.
+numpy==1.26.4
+Pillow>=10.0,<13.0
+transformers==4.46.3
+tokenizers==0.20.3
+huggingface-hub==0.26.2
+safetensors==0.4.5

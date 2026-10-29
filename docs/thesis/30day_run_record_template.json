@@ -86,7 +86,7 @@
     "microbatch": 1,
     "gradient_accumulation": 8,
     "effective_batch": 8,
-    "epochs": 80,
+    "epochs": 40,
     "optimizer": "AdamW",
     "new_module_lr": 0.0001,
     "visual_last2_lr": 1E-05,
@@ -140,7 +140,7 @@
     "Do not fill performance fields from guesses or from results on a different split.",
     "Monthly plan window: 2026-10-29 through 2026-11-27. Mandatory18 runs; optional6.",
     "512 is the monthly default, overriding the broad research template768 default.",
-    "80 epochs is proposed and must be locked by2026-11-07 using internal data; no final-evaluation-based tuning.",
+    "40 epochs is the current default and must be locked by2026-11-07 using internal data; no final-evaluation-based tuning.",
     "Fill model-specific settings for B2/B3/B4/A2/A4/P rather than using P defaults for all baselines.",
     "No actual run, GPU-hour measurement, or score exists in this template."
   ]
