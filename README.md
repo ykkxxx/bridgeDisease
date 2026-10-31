@@ -27,6 +27,7 @@
 - [数据清洗、划分与训练/验证/测试集作用](docs/DATA_PREPARATION.md)
 - [AutoDL训练、评估与推理](docs/TRAINING.md)
 - [清洗数据7z打包与解压](docs/PACKAGE.md)
+- [论文实验数据保留、CSV导出与基线顺序](docs/EXPERIMENT_RECORDS.md)
 
 ## 云端快速启动
 

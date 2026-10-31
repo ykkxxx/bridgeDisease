@@ -173,6 +173,8 @@ python scripts/run_experiments.py --stage dev --seeds 42
 
 ## 输出与检查
 
+论文曲线/逐类表/多seed统计的导出，以及基线补跑和备份步骤见[实验记录说明](EXPERIMENT_RECORDS.md)。现有训练记录已包含每轮与逐类指标，无需为CSV导出修改正在运行的训练程序。
+
 每个运行目录包含 `config.json`、`metadata.json`、`history.jsonl`、`last.pt`；dev另有 `best.pt`，final结束后有 `final.pt`。元数据记录Git提交、数据清单和提示文件哈希、版本与参数量，CUDA训练记录显存峰值。`history.jsonl`内包含每轮训练损失、耗时和内部验证指标。
 
 本地或云端安装开发依赖后可运行小样本测试，无需下载真实预训练权重：
